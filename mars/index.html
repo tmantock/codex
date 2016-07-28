@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="codexApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Earth</title>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="app.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body ng-controller="marsController as mc" id="body">
+    <div class = "col-lg-8 col-md-8 pad">
+      <div id="mars"></div>
+    </div>
+
+    <div class="col-lg-4 col-md-4 pad information-container">
+      <p>{</p>
+      <ul>
+        <li>Name: Mars</li>
+        <li>Position: 4th Planet from Sol</li>
+        <li>Equatorial Diameter: 6,792 km</li>
+        <li>Polar Diameter: 6,752 km</li>
+        <li>Satellites: 2 (Phobos &amp; Deimos)</li>
+        <li>Orbit Distance: 227,943,824 km (1.38 AU)</li>
+        <li>Orbit Period: 687 days (1.9 years)</li>
+        <li>Gravity: 3.711 m/s<sup>2</sup></li>
+        <li>Terrestial Date: {{ mc.mars.terrestrial_date | date }}</li>
+        <li>Sol (Date): {{ mc.mars.sol }}</li>
+        <li>Month: {{ mc.mars.season }}</li>
+        <li>Martian Season: {{ mc.mars.ls }}</li>
+        <li>Minimum Temperature: {{ mc.mars.min_temp + " °C"}}</li>
+        <li>Maximum Temperature: {{ mc.mars.max_temp + " °C"}}</li>
+        <li>Atmospheric Pressure: {{ mc.mars.pressure + " pascals"}}</li>
+        <li>Humidity: {{ mc.mars.abs_humidity }}</li>
+        <li>Wind Speed: {{ mc.mars.wind_speed}}</li>
+        <li>Wind Direction: {{ mc.mars.wind_direction }}</li>
+        <li>Weather Status: {{ mc.mars.opacity }}</li>
+      </ul>
+      <p>}</p>
+    </div>
+  </body>
+</html>

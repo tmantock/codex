@@ -1,0 +1,85 @@
+* {
+  font-family: 'Roboto', sans-serif;
+  list-style-type: none;
+  color: #ffffff;
+}
+
+body {
+  background: radial-gradient(ellipse at center, #090000 0%, #090000 100%);
+  overflow: hidden;
+}
+
+#mars {
+  position: relative;
+  width: 330px;
+  height: 330px;
+  margin: 3em auto;
+  background: url(mars.jpg) 0 0 repeat;
+  border-radius: 50%;
+  background-size: 630px;
+  animation: rotate 25s linear infinite;
+  transition: transform 200ms linear;
+  transform-style: preserve-3d;
+  box-shadow: inset 20px 0 80px 6px rgba(0, 0, 0, 1);
+  color: #000;
+  z-index: +1;
+}
+
+#mars:after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: -80px 15px 80px 10px rgba(0,0,0,.9) inset;
+}
+
+#mars:before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.2;
+  background: radial-gradient(circle at 100px 100px, #fff, #000);
+}
+
+.small_star {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  border-radius: 50%;
+  background: #ffffff;
+  animation: scroll 75s linear infinite;
+}
+
+.big_star {
+  position: absolute;
+  height: 3px;
+  width: 3px;
+  border-radius: 50%;
+  background: #ffffff;
+  animation: scroll 100s linear infinite;
+}
+
+.pad {
+  padding-top: 10%;
+}
+
+@keyframes scroll {
+  from {
+      transform: translateY(0px);
+  }
+  to {
+      transform: translateY(-700px);
+  }
+}
+
+@keyframes rotate {
+  0% {background-position: 0 0;}
+  100% {background-position: 630px 0;}
+}
